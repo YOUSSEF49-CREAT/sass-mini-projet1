@@ -1,0 +1,80 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+int indix = 0;
+char etudiant[30][30];
+float math[30];
+float informatique[30];
+float physique[30];
+
+
+void menu(){
+    printf(" [1] pour ajouter un etudiante !\n");
+    printf(" [2] pour afficher les resultat d'un etudiante !\n");
+    printf(" [3] pour afficher la notes max !\n");
+   
+    printf(" [0] pour exit le programe !\n");
+    printf(" entrer votre choi :");
+}
+void ajouter(){
+    printf("entre le nom etudiant :");
+    fgets(etudiant[indix],sizeof(etudiant[indix]),stdin);
+    
+    printf("entre la note de math :");
+    scanf("%f",&math[indix]);
+    
+    printf("entre la note de physique:");
+    scanf("%f",&physique[indix]);
+   
+     printf("entre la note de informatique :");
+    scanf("%f",&informatique[indix]);
+  
+    indix++;
+}
+void afficher(){
+    
+     float mayen_not ;
+    for(int i=0; i < indix ; i++){
+        printf("\n \n\n______________l'etudiant %d___________ \n\n\n",i );
+        printf("nom de etudiant est : %s \n",etudiant[i]);
+        printf("la notes de math est : %2.f \n",math[i]);
+        printf("la notes de physique est : %2.f\n ",physique[i]);
+        printf("la notes de informatique est : %2.f\n",informatique[i]);
+        
+   
+    mayen_not = (physique[i]+informatique[i]+math[i])/3;
+    printf("la moyen des notes est : %.2f\n",mayen_not);
+        printf("\n\n\n");
+    }
+}
+void not_max(){
+    
+}
+int main() {
+    int choi; 
+    do{
+        menu();
+        scanf("%d",&choi);
+        getchar();
+        switch(choi){
+            case 1: ajouter();
+            break;
+             case 2: afficher();
+            break;
+             case 3: not_max();
+            break;
+            
+             case 0:printf("merci pour visit");
+            break;
+            
+            default : printf("dakhl mn wahd tal khamsa\n");
+             break ;
+            
+        }
+        
+    }while(choi != 0);
+    
+    
+   
+
+    return 0;
+}
