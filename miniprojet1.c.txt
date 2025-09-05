@@ -1,4 +1,4 @@
-// Online C compiler to run C program online
+
 #include <stdio.h>
 int indix = 0;
 char etudiant[30][30];
@@ -19,14 +19,18 @@ void ajouter(){
     printf("entre le nom etudiant :");
     fgets(etudiant[indix],sizeof(etudiant[indix]),stdin);
     
+do{
     printf("entre la note de math :");
     scanf("%f",&math[indix]);
-    
+}while(math[indix]>20 || math[indix]<0);
+do{
     printf("entre la note de physique:");
     scanf("%f",&physique[indix]);
-   
+}while(physique[indix]>20 || physique[indix]<0);
+do{
      printf("entre la note de informatique :");
     scanf("%f",&informatique[indix]);
+}while(informatique[indix]>20 || informatique[indix]<0);
   
     indix++;
 }
